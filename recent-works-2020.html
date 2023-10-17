@@ -1,0 +1,1256 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="keywords"  content="designer,interaction,ux,ui,design,portfolio,product design,digital product,italy,web,mobile" />
+      <meta name="description"  content="Interaction and Visual Designer, focused on Digital Product Design with passion for creating simple UI that result in great User Experience." />
+      <meta name="twitter:card"  content="summary_large_image" />
+      <meta name="twitter:site"  content="@AdobePortfolio" />
+      <meta  property="og:title" content="Harun Alikadic - Interaction Graphic UI UX Designer - Selected Works 2019-2020" />
+      <meta  property="og:description" content="Interaction and Visual Designer, focused on Digital Product Design with passion for creating simple UI that result in great User Experience." />
+      <meta  property="og:image" content="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6222a1d5-6221-4035-8b88-41f8e4d4c18e_rwc_66x0x2946x2304x2946.jpg?h=8490f3f1f9b6edbca06be0a42563b694" />
+        <link rel="icon" href="../pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2eec75fc-813f-4d07-ae2a-1a8d7c6b8e22_carw_1x1x32-h=5c3788109bcf98994704de5956f46c13.png" />
+      <link rel="stylesheet" href="dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="../pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/717829a48b5fad64747b7bf2f577ae731612953419-h=1bc5413564d61a5545f1436752591ad2.css" type="text/css" />
+    <link rel="canonical" href="recent-works-2020.html" />
+      <title>Harun Alikadic - Interaction Graphic UI UX Designer - Selected Works 2019-2020</title>
+    <script type="text/javascript" src="../use.typekit.net/ik/GfTBkGSIgU58a_pjXHmkuulrrrj2lvkA_LRBpOwvJZCfeT92fHYEBsJzwD9oFDIDWhb35A4Kwe48FDBcjDs8Z2FyF2JtFcjaFejkZRjkFhIhZQbUZcjowDq-pfG0-eBkiAt0-WbCHKolpWgzS1scdhUTdkoRdhXCHKo3ScvkOWZTZWS0dW83da4XZcNC-Av0jhNlOeyyS1m0Oc8XOeuoSeNkieZzde8zOcFzdPU3Scv-c449dda03f17123e.js" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav data-hover-hint="nav">
+              <ul class="group">
+                  <li class="gallery-title"><a href="work-projects.html"  >Work</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="services.html" >Process</a>
+      </div>
+      <div class="page-title">
+        <a href="about.html" >About</a>
+      </div>
+              <ul class="group">
+                  <li class="gallery-title"><a href="projects.html"  >Personal</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+              <div class="social pf-nav-social" data-hover-hint="navSocialIcons">
+                <ul>
+                        <li>
+                          <a href="https://www.behance.net/harunalikadic" target="_blank">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://www.linkedin.com/in/harunalikadic" target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                            <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                              c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                              C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.instagram.com/harunalikadic/" target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                            <g>
+                              <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                                c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                                c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                                c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                                c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                                c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                                c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                                c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                                c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                              <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                                c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                              <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                            </g>
+                            </svg>
+                          </a>
+                        </li>
+                </ul>
+              </div>
+          </nav>
+    </div>
+  </div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <div class="sidebar-content">
+          <header class="site-header">
+              <div class="logo-wrap" data-hover-hint="logo">
+                    <div class="logo e2e-site-logo-text logo-image  ">
+    <a href="" class="image-normal image-link">
+      <img src="../pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/81880883-c58f-4af1-96f3-635c8778fce3_rwc_0x0x100x100x4096-h=01e80c80775615c69b3b48c66dba39c4.png" alt="Harun Alikadic">
+    </a>
+</div>
+<div class="logo-secondary logo-secondary-text ">
+    <span class="preserve-whitespace">Harun Alikadic Interaction and Visual designer</span>
+</div>
+
+              </div>
+  <div class="hamburger-click-area js-hamburger">
+    <div class="hamburger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+          </header>
+              <nav data-hover-hint="nav">
+              <ul class="group">
+                  <li class="gallery-title"><a href="work-projects.html"  >Work</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="services.html" >Process</a>
+      </div>
+      <div class="page-title">
+        <a href="about.html" >About</a>
+      </div>
+              <ul class="group">
+                  <li class="gallery-title"><a href="projects.html"  >Personal</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+                  <div class="social pf-nav-social" data-hover-hint="navSocialIcons">
+                    <ul>
+                            <li>
+                              <a href="https://www.behance.net/harunalikadic" target="_blank">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://www.linkedin.com/in/harunalikadic" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                  c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                  C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://www.instagram.com/harunalikadic/" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <g>
+                                  <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                                    c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                                    c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                                    c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                                    c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                                    c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                                    c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                                    c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                                    c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                                  <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                                    c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                                  <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                                </g>
+                                </svg>
+                              </a>
+                            </li>
+                    </ul>
+                  </div>
+              </nav>
+        </div>
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p5f175711e6677ff05659dbf5eab2ee4abc4374846447a437855f9">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">Recent works 2019-2020</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px;" class="texteditor-inline-lineheight"><span style="font-size:18px;" class="texteditor-inline-fontsize">Freelancing last two years brought me to work on <span style="color:#cccccc;" class="texteditor-inline-color">increased quantity and variety of clients, projects, topics and design disciplines</span>, that challenged and ultimately improved my organisational skills. Also, I had opportunity to improve my process of delivery and <span style="color:#cccccc;" class="texteditor-inline-color">collaboration with developers</span>. Following, highlights from some selected recent projects. <span class="underline"><a href="contact.html" target="_self">Contact me</a></span> for more detailed portfolio, or take a look at some older <span style="color:#999999;" class="texteditor-inline-color"><span class="underline"><a href="case-studies.html" target="_self">case-studies</a></span></span>. Click the image to zoom.</span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title"><span class="texteditor-inline-color" style="color:#999999;">I</span>nternet of things, Smart Home and Artificial Intelligence projects<span class="texteditor-inline-color" style="color:#999999;"></span></div><div><span class="texteditor-inline-color" style="color:#888888;">IoT and AI projects present a challenge for designing UX and prototyping while leaving enough space for innovation and experimenting. I was lucky to be involved in some of these projects from the early stages and had opportunity to shape the product and write requirements in order to enhance UX optimisation.</span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="  padding-top: 10px;
+  padding-bottom: 30px;
+  width: 90%;
+  max-width: 800px;
+  float: left;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div class="texteditor-inline-lineheight" style="line-height:33px;"><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Smart home heating and CONNECTED applianceS APP</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:15px;" class="texteditor-inline-fontsize"><span style="text-transform:none;">Research, MVP definition and collaboration with engineers at defining hardware and cloud functionalities based on objectives and business and user needs. Design of consumer UX and mobile app UI. Design system definition and collaboration with developers.</span></span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 60px;
+  width: 100%;
+  float: right;
+  clear: both;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4c0594b7-6da3-444b-8e42-411ac5b7fc1a.jpg?h=8b00a99020e2a99df72282559b454322">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4c0594b7-6da3-444b-8e42-411ac5b7fc1a_rw_1920.jpg?h=61a974fa169e579f0a50d38ff532e687"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4c0594b7-6da3-444b-8e42-411ac5b7fc1a_rw_600.jpg?h=53495849b749a057a6bd1a3b8547b7a7 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4c0594b7-6da3-444b-8e42-411ac5b7fc1a_rw_1200.jpg?h=74248599c86592e9a8c09039c7a8128d 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4c0594b7-6da3-444b-8e42-411ac5b7fc1a_rw_1920.jpg?h=61a974fa169e579f0a50d38ff532e687 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text" style="  padding-top: 10px;
+  padding-bottom: 30px;
+  width: 90%;
+  max-width: 800px;
+  float: left;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Home security and anti-intrusion sensor PRODUCT dashboard</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize"><span style="font-size:16px;">Design of a dashboard web app. Study of target user groups. Creation of a document covering user epics, stories and tasks. Wire-framing, interactive components and design system for hardware enrolment, notifications, error monitoring.  </span></span>​​​​​​​</div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 60px;
+  width: 100%;
+  float: right;
+  clear: both;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6129e243-f4bd-4538-86bd-d2a0a49d0a25.jpg?h=b19f976f9256280a802e764a6fa134ee">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6129e243-f4bd-4538-86bd-d2a0a49d0a25_rw_1920.jpg?h=f0681d12e8e0e716a9c7ba1bbf66b835"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6129e243-f4bd-4538-86bd-d2a0a49d0a25_rw_600.jpg?h=9881068d470068aec9994466e8756c88 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6129e243-f4bd-4538-86bd-d2a0a49d0a25_rw_1200.jpg?h=20d94fe3b84ac28eaddfe85e72ed65e6 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6129e243-f4bd-4538-86bd-d2a0a49d0a25_rw_1920.jpg?h=f0681d12e8e0e716a9c7ba1bbf66b835 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color">SMART HEATING CONFIGURATION SOFTWARE FOR INSTALLERS</span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Designed in a team with electronic hardware manufacturer, fluid mechanic engineers and software developers, from the early stage of objectives definitions until and after the launch. Worked closely with the client's strategy, marketing and sales teams.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8803ae8b-899a-49c7-aca2-ace1079c6216.jpg?h=2b64f4027e12731804839841a3875309">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8803ae8b-899a-49c7-aca2-ace1079c6216_rw_1920.jpg?h=062b345acdcdd07f79fa70e4d1fa575a"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8803ae8b-899a-49c7-aca2-ace1079c6216_rw_600.jpg?h=4a29802bb46a66a2e124c3000cedeef1 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8803ae8b-899a-49c7-aca2-ace1079c6216_rw_1200.jpg?h=bcf8bfaa11663ca451ec061b01615e81 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8803ae8b-899a-49c7-aca2-ace1079c6216_rw_1920.jpg?h=062b345acdcdd07f79fa70e4d1fa575a 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">connected kitchen appliances consumer mobile apps</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Designed and followed development until launch of several mobile apps for smart home appliances, like kitchen hood or cooking roner. Definition of user's experience, stories and tasks. Mobile app prototyping and design-to-development  handoff. </span>​​​​​​​</div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/40382eae-c801-4249-b931-723a03ccdfbf.png?h=f28a98d73784f0df18f431bbc2471ca7">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/40382eae-c801-4249-b931-723a03ccdfbf_rw_1920.png?h=ab0f9a3387fb81dc59db7c80644ef3e8"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/40382eae-c801-4249-b931-723a03ccdfbf_rw_600.png?h=038f6e8ba6bdc687cf944dae88e63327 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/40382eae-c801-4249-b931-723a03ccdfbf_rw_1200.png?h=8015b1bb4a7b43a0c7356c768eadbd73 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/40382eae-c801-4249-b931-723a03ccdfbf_rw_1920.png?h=ab0f9a3387fb81dc59db7c80644ef3e8 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">EKG SELF ASSESSMENT WEARABLE DEVICE COMPANION APP</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size: 16px;">Design for two user groups, patient and technical operator started with understanding user stories and studying technical documentation. Bending design around the functional constrains in order to reach users needs and expectations was the biggest challenge.  Worked closely with developers and engineers to design within API and physical device capabilities, while also suggesting features for future development, to envision projections of product and business strategy.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/33f40371-9b1d-470a-88cd-f5dfd050341c.jpg?h=672ce45d72ac876fa375acb21bc64d71">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/33f40371-9b1d-470a-88cd-f5dfd050341c_rw_1920.jpg?h=f8c9bb1d3531a759ce9793fc8ab1c9f4"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/33f40371-9b1d-470a-88cd-f5dfd050341c_rw_600.jpg?h=f11081d7c7a16893bf3957a4860874c2 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/33f40371-9b1d-470a-88cd-f5dfd050341c_rw_1200.jpg?h=22f0388a9411b6dd5acc8009e1d970dd 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/33f40371-9b1d-470a-88cd-f5dfd050341c_rw_1920.jpg?h=f8c9bb1d3531a759ce9793fc8ab1c9f4 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Environmental, Energy Efficiency and DECISION SUPPORT SYSTEM dashboards</div><div>Working on new topics makes me learn new things, understand different groups of users and challenges my process. Designing for such specific fields like environmental impact assessment (LCA, PEF) and energy efficiency analysis required learning, documenting and understanding this type of users and their needs and objectives. Visiting a livestock farm with an interactive prototype and asking farmers to dedicate few minutes to user testing is a precious experience. </div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Product environmental footprint calculator for farmers</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Research and design for a web app project aiming to provide dairy sector farmers with an EDSS tool able to calculate the PEF and encourage its reduction, creating custom solutions and techniques to optimise the performance of the entire production cycle.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4a18649e-2d47-46b2-90f5-1a2570a6522c.jpg?h=028b06e7dd902b4eed95846edc7d2f7f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4a18649e-2d47-46b2-90f5-1a2570a6522c_rw_1920.jpg?h=624ab05f2f8ba3b659f658c4ce013f5c"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4a18649e-2d47-46b2-90f5-1a2570a6522c_rw_600.jpg?h=c7acf9ca16cc8b9ec8ca66001727981d 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4a18649e-2d47-46b2-90f5-1a2570a6522c_rw_1200.jpg?h=a0cf36e9144d5eed0287dccb4c276a95 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4a18649e-2d47-46b2-90f5-1a2570a6522c_rw_1920.jpg?h=624ab05f2f8ba3b659f658c4ce013f5c 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#cccccc;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Energy efficiency DASHBOARD FOR DECISION support &amp; DESIGN SYSTEM</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Information architecture, user experience and visual design for a multi-tenant web application with purpose of monitoring, analysis and optimisation for energy saving and efficiency in different industries. Design system and collaboration with developers at all stages.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cd726d7c-aa60-4de2-97c1-c0c896762fa6.jpg?h=5e0f84e86e71dc39dd7d4d4b33e232c2">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cd726d7c-aa60-4de2-97c1-c0c896762fa6_rw_1920.jpg?h=13f836568f71cc3d27e4ff4d71fc2d4d"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cd726d7c-aa60-4de2-97c1-c0c896762fa6_rw_600.jpg?h=27ae9cfe6a944bab09f39e54e64f2d92 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cd726d7c-aa60-4de2-97c1-c0c896762fa6_rw_1200.jpg?h=0a8b7c52918950ed3d8009a1b7bf61a6 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cd726d7c-aa60-4de2-97c1-c0c896762fa6_rw_1920.jpg?h=13f836568f71cc3d27e4ff4d71fc2d4d 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Visual design, Branding and Communication PROJECTS</div><div>Graphic, communication and branding design requires different creative process than interaction design, but human-centered approach comes handy even when designing static visual communication assets, because, well, they also speak to humans. You just do not have to worry about speaking 'computer' as well.</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Gamification apps for school teaching sustainable mobility</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Modular brand identity and brand architecture for Climb, a children mobility research project, created in Fondazione Bruno Kessler (FBK). Product identity, scalable design system, logo, website design, copywriting and print material. <a href="https://www.behance.net/gallery/84998107/Climb-Project-Branding-and-Visual-Design" target="_blank"><span style="color:#cccccc;" class="texteditor-inline-color"><span class="underline">View more</span></span></a></span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/210c14c6-d511-4740-a29d-a6cd12f3098f.jpg?h=4efaae8acc1815e87294df4863d1d4d2">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/210c14c6-d511-4740-a29d-a6cd12f3098f_rw_1920.jpg?h=3efcc2d9d14859af357edd4de9eba8b0"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/210c14c6-d511-4740-a29d-a6cd12f3098f_rw_600.jpg?h=6f3daa27bebd3c8a09adcf599bf178b8 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/210c14c6-d511-4740-a29d-a6cd12f3098f_rw_1200.jpg?h=364198e6c4d55a21ab8c4249bc4b30a7 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/210c14c6-d511-4740-a29d-a6cd12f3098f_rw_1920.jpg?h=3efcc2d9d14859af357edd4de9eba8b0 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Coders festivals branding architecture and design system</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Scalable logo identity and responsive website design for Italy's leading mobile tech conferences. Art direction, visual design elements, vector illustrations, logo, typography and copywriting.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/55946252-5db3-4fd9-974c-173427a61daa.jpg?h=b61a23e3d8b58430907579b8f9a32ff6">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/55946252-5db3-4fd9-974c-173427a61daa_rw_1920.jpg?h=e9de7006538e1ddf12890b8a69a526c1"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/55946252-5db3-4fd9-974c-173427a61daa_rw_600.jpg?h=e7a5fd8d0b54606db995959ecce50a5a 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/55946252-5db3-4fd9-974c-173427a61daa_rw_1200.jpg?h=919e715df1ca09e8d7f78dbe01729834 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/55946252-5db3-4fd9-974c-173427a61daa_rw_1920.jpg?h=e9de7006538e1ddf12890b8a69a526c1 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Brand identity for a Software / iot developers collective CODERMINE</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Brand redesign, visual style-guide, website design for a software and app development agency. Objective was to create a new identity that the team can relate to and also to design custom badges and team logo system. Art direction of visual, copy and photo. <span style="color:#cccccc;" class="texteditor-inline-color"><a href="https://www.behance.net/gallery/84995367/Codermine-Branding-Logo-and-Visual-Style-Design" target="_blank"><span class="underline">View more</span></a></span></span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/00cdab0d-0550-42f7-9a45-9977697aa0e7.jpg?h=16a27a37fa05fecc3670194961189e06">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/00cdab0d-0550-42f7-9a45-9977697aa0e7_rw_1920.jpg?h=23d2fbdb3174c3abb8dd1bc9c278b691"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/00cdab0d-0550-42f7-9a45-9977697aa0e7_rw_600.jpg?h=9b2e9af5dd97f576bc4de67d49b7373d 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/00cdab0d-0550-42f7-9a45-9977697aa0e7_rw_1200.jpg?h=e7126cb5074374e38597918baafe5277 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/00cdab0d-0550-42f7-9a45-9977697aa0e7_rw_1920.jpg?h=23d2fbdb3174c3abb8dd1bc9c278b691 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">EU funded sustainable mobility project logo, website &amp; print</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Brand identity for a sustainable mobility project. Logo design, typography, vector illustration, visual guideline, website prototyping and brochure/catalog design. Social network communication design, exporting graphical templates for posts. <span style="color:#cccccc;" class="texteditor-inline-color"><a href="https://metropolidipaesaggio.it/" target="_blank"><span class="underline">View website</span></a></span></span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cc988a8f-b931-4a65-8a06-a1415b953e54.jpg?h=c109cd73ed61205c4f49123989132601">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cc988a8f-b931-4a65-8a06-a1415b953e54_rw_1920.jpg?h=7d08919e7fa6954163173b2696b4c85b"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cc988a8f-b931-4a65-8a06-a1415b953e54_rw_600.jpg?h=55861dbed1e342653c37ca9e758ce118 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cc988a8f-b931-4a65-8a06-a1415b953e54_rw_1200.jpg?h=fd5846bb6aa26d7a8e2e8b0820bcdffe 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/cc988a8f-b931-4a65-8a06-a1415b953e54_rw_1920.jpg?h=7d08919e7fa6954163173b2696b4c85b 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">StartupS, Design Thinking and innovation sprints</div><div>Shaping a product idea is always interesting. It involves lots of human interaction, working with people and translating their vision into a product. It involves teams with multi-disciplinary background and my role is often that of moderator asking lots of questions, redirecting the product definition towards defined objectives. Personally, I enjoy every activity - sprints, whiteboards, desktop and user research, feature and MVP decisions, technical problems, business goals, launching. </div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Multi-service booking app for covid-19 space occupancy limits</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Briefing by client: imagine a booking system of public spaces, like beaches, parks or picnic spots, with occupational limits due to corona virus emergency measures. Designed, as part of a team, a flexible and scalable web application, backend, API and front store. </span>​​​​​​​</div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/66d3c0a2-9c70-4f8a-a737-4d15a139747a.png?h=b39e64bbb214725403c29878c40e0872">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/66d3c0a2-9c70-4f8a-a737-4d15a139747a_rw_1920.png?h=d39f62cf5ce4fdc5425000a22d6fab9b"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/66d3c0a2-9c70-4f8a-a737-4d15a139747a_rw_600.png?h=abede7d5375a1e36300fc32176df595d 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/66d3c0a2-9c70-4f8a-a737-4d15a139747a_rw_1200.png?h=89924eaa88d77d39d5235633259b31fe 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/66d3c0a2-9c70-4f8a-a737-4d15a139747a_rw_1920.png?h=d39f62cf5ce4fdc5425000a22d6fab9b 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Social network for teams, DESIGN BASED ON humane tech approach</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;">Helped a client to brainstorm, research and design their idea of a new social network app, solving some of the existing social apps problems, like isolation, fake profiles, virtuality favoured to reality, digital addiction etc. Design based on principles of humane-tech.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4221b073-d539-4d85-ab98-965e865b0403.png?h=40c92d8959c17aefe0d8c9a8ecb1d87b">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4221b073-d539-4d85-ab98-965e865b0403_rw_1920.png?h=1643b8b2b66b30a0a30cc2b63ae6f3c2"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4221b073-d539-4d85-ab98-965e865b0403_rw_600.png?h=8958ddec7e01d6d9457a27f0152f51bb 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4221b073-d539-4d85-ab98-965e865b0403_rw_1200.png?h=e0a7eb98dce86b8b6261f1e3ec4d6c84 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/4221b073-d539-4d85-ab98-965e865b0403_rw_1920.png?h=1643b8b2b66b30a0a30cc2b63ae6f3c2 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">Baby monitor app &amp; sensor based on breathing scanning</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Design sprint with engineering team to research, profile the users, benchmark competitors and design a complete prototype for a <span style="color:#cccccc;" class="texteditor-inline-color"><a href="https://www.behance.net/gallery/88162853/Jellio-baby-breathing-monitor" target="_blank"><span class="underline">baby monitor</span></a></span>. From wireframes and mockup to a working prototype (physical+app); including product and branding ideas. </span>​​​​​​​</div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/29f67664-bc82-4914-9169-cb4da602a971.png?h=8119d4268e4a20c8270925c173b5b22c">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/29f67664-bc82-4914-9169-cb4da602a971_rw_1920.png?h=74eb73f7b535eefd6e1400207b3bfd00"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/29f67664-bc82-4914-9169-cb4da602a971_rw_600.png?h=06f2c5a2d6d04e79021a844776c39fd7 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/29f67664-bc82-4914-9169-cb4da602a971_rw_1200.png?h=76b93f31a664598c1826640f8a790937 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/29f67664-bc82-4914-9169-cb4da602a971_rw_1920.png?h=74eb73f7b535eefd6e1400207b3bfd00 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree js-js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 3">
+        
+        
+        
+        
+        
+        <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><span style="color:#ffffff;" class="texteditor-inline-color"><span style="text-transform:uppercase;">RESEARCH FOR AR/VR showcase app for real-estate AGENCIES</span></span></div><div style="line-height:18px;" class="texteditor-inline-lineheight"><span style="font-size:16px;" class="texteditor-inline-fontsize">Helped client to research ideas and existing products for innovative approach to real-estate promotion and sales. Created a report of current market solutions, potential benefits for their specific case and pitch of some possible new ideas and products.</span></div></div>
+</div>
+
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 7">
+        
+        <div class="project-module module image project-module-image js-js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/db72d54e-670e-4653-9652-9a99ef3542b9.png?h=e38a46e0244b56692e46623415c7a28f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/db72d54e-670e-4653-9652-9a99ef3542b9_rw_1920.png?h=18eab96b9e62862f76f96c475dc9ccd4"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/db72d54e-670e-4653-9652-9a99ef3542b9_rw_600.png?h=27cbbba0ea7f0f3a352c9338e6ef5d2c 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/db72d54e-670e-4653-9652-9a99ef3542b9_rw_1200.png?h=2ac224eb69e4636e60f9fcb39a95cd19 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/db72d54e-670e-4653-9652-9a99ef3542b9_rw_1920.png?h=18eab96b9e62862f76f96c475dc9ccd4 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Design systems, collaborative prototyping and specs sharing with developers</div><div class="main-text">Reducing the gap between design and code was always something that I was interested in. Understanding the nature of what computation is, helped me as a designer to make better decisions. Design and technology are fused together, so designer's work should be too. Having myself experience in coding, and being curious about how new cutting edge technologies work, enables me to work at the laying out the initial requirements with the client and to guide the conversation with the engineering team. It also helps when sharing documentation, specs and design systems with developers.</div><div class="main-text"><br></div></div>
+</div>
+
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="recent-works-2020.html#"><span class="arrow">&uarr;</span><span class="preserve-whitespace"></span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="recent-works-2020.html#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+              <footer class="site-footer" data-hover-hint="footer">
+                <div class="footer-text">
+                  © 2020 Harun Alikadic
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":15,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5f175711e6677ff05659dbf5eab2ee4abc4374846447a437855f9","theme":{"name":"basic"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#FFFFFF"}},"cookie_banner":{"enabled":false},"googleAnalytics":{"trackingCode":"UA-38906924-1","anonymization":false}};</script>
+  <script type="text/javascript" src="site/translations-cb="></script>
+  <script type="text/javascript" src="dist/js/main-cb=.js"></script>
+</html>

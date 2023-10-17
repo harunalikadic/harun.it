@@ -1,0 +1,1677 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="keywords"  content="Adobe Portfolio" />
+      <meta name="description"  content="Inhouse Digital Product Researcher and Designer for a tourism services booking software startup." />
+      <meta name="twitter:card"  content="summary_large_image" />
+      <meta name="twitter:site"  content="@AdobePortfolio" />
+      <meta  property="og:title" content="Harun Alikadic - Interaction Graphic UI UX Designer - Product design for TravelMesh, a travel startup" />
+      <meta  property="og:description" content="Inhouse Digital Product Researcher and Designer for a tourism services booking software startup." />
+      <meta  property="og:image" content="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/df89d292-d33d-4041-bc84-0b6a395dd4e7_rwc_7x7x1189x930x1189.jpg?h=21493adcd6f0157868063b77ececd631" />
+        <link rel="icon" href="../pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2eec75fc-813f-4d07-ae2a-1a8d7c6b8e22_carw_1x1x32-h=5c3788109bcf98994704de5956f46c13.png" />
+      <link rel="stylesheet" href="dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="../pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/0a2ae985c7bf53487563c2df3f8f62a91612953419-h=4cfb7147ce08009cf74f3d97f9d48dac.css" type="text/css" />
+    <link rel="canonical" href="travelmesh.html" />
+      <title>Harun Alikadic - Interaction Graphic UI UX Designer - Product design for TravelMesh, a travel startup</title>
+    <script type="text/javascript" src="../use.typekit.net/ik/GfTBkGSIgU58a_pjXHmkuulrrrj2lvkA_LRBpOwvJZCfeT92fHYEBsJzwD9oFDIDWhb35A4Kwe48FDBcjDs8Z2FyF2JtFcjaFejkZRjkFhIhZQbUZcjowDq-pfG0-eBkiAt0-WbCHKolpWgzS1scdhUTdkoRdhXCHKo3ScvkOWZTZWS0dW83da4XZcNC-Av0jhNlOeyyS1m0Oc8XOeuoSeNkieZzde8zOcFzdPU3Scv-c449dda03f17123e.js" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav data-hover-hint="nav">
+              <ul class="group">
+                  <li class="gallery-title"><a href="work-projects.html"  >Work</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="services.html" >Process</a>
+      </div>
+      <div class="page-title">
+        <a href="about.html" >About</a>
+      </div>
+              <ul class="group">
+                  <li class="gallery-title"><a href="projects.html"  >Personal</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+              <div class="social pf-nav-social" data-hover-hint="navSocialIcons">
+                <ul>
+                        <li>
+                          <a href="https://www.behance.net/harunalikadic" target="_blank">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://www.linkedin.com/in/harunalikadic" target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                            <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                              c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                              C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                            </svg>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.instagram.com/harunalikadic/" target="_blank">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                            <g>
+                              <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                                c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                                c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                                c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                                c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                                c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                                c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                                c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                                c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                              <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                                c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                              <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                            </g>
+                            </svg>
+                          </a>
+                        </li>
+                </ul>
+              </div>
+          </nav>
+    </div>
+  </div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <div class="sidebar-content">
+          <header class="site-header">
+              <div class="logo-wrap" data-hover-hint="logo">
+                    <div class="logo e2e-site-logo-text logo-image  ">
+    <a href="" class="image-normal image-link">
+      <img src="../pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/81880883-c58f-4af1-96f3-635c8778fce3_rwc_0x0x100x100x4096-h=01e80c80775615c69b3b48c66dba39c4.png" alt="Harun Alikadic">
+    </a>
+</div>
+<div class="logo-secondary logo-secondary-text ">
+    <span class="preserve-whitespace">Harun Alikadic Interaction and Visual designer</span>
+</div>
+
+              </div>
+  <div class="hamburger-click-area js-hamburger">
+    <div class="hamburger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+          </header>
+              <nav data-hover-hint="nav">
+              <ul class="group">
+                  <li class="gallery-title"><a href="work-projects.html"  >Work</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="services.html" >Process</a>
+      </div>
+      <div class="page-title">
+        <a href="about.html" >About</a>
+      </div>
+              <ul class="group">
+                  <li class="gallery-title"><a href="projects.html"  >Personal</a></li>
+              </ul>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+                  <div class="social pf-nav-social" data-hover-hint="navSocialIcons">
+                    <ul>
+                            <li>
+                              <a href="https://www.behance.net/harunalikadic" target="_blank">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://www.linkedin.com/in/harunalikadic" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                  c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                  C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://www.instagram.com/harunalikadic/" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <g>
+                                  <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                                    c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                                    c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                                    c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                                    c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                                    c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                                    c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                                    c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                                    c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                                  <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                                    c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                                  <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                                </g>
+                                </svg>
+                              </a>
+                            </li>
+                    </ul>
+                  </div>
+              </nav>
+        </div>
+        <main>
+  <div class="page-container" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+      <div class="page-content js-page-content" data-context="pages" data-identity="id:p5653d0e567a4c29193ead00f2420af8f778d8f0b2e0e04ad12e5e">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">TravelMesh, Web Product Design<br>Tourism Services Booking System</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div>TravelMesh was a web product of a tech startup company from Trento, Italy. It is a web based platform that connects existing online tourism booking systems through a meta-search technology and outputs the travel offers in a UI web widget and an API. TravelMesh enables travellers to search, create and book custom travel packages formed of local tourism services, otherwise available on multiple disconnected websites and systems.</div><div>In two years, starting fall 2014, until mid 2016, I lead entire product design process starting from product idea, through research, prototyping, investor pitching up to building the Minimum Viable Product (MVP), branding design and user testing. Since 2015 TravelMesh was installed on various destination websites, ranging from national scale, such as Expo 2015, with millions of monthly visits, down to local scale destination websites in Trentino province.</div></div><div><div>Year: 2016<br>Startup: TravelMesh<br>Role: Head of Design, part of the in-house agile development team<br>Responsibilities: Interaction, Branding and Visual Design, User Testing and Research<br>Design Tools: Illustrator, Photoshop, Sketch, InvisionApp, Zeplin<br>Prototypes: <a href="https://invis.io/QW9MAU2GY" target="_blank">Consumer widget</a></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff.jpg?h=8a6f12bead332bc085aee166832b3421">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff_rw_3840.jpg?h=a416576ef1459c151392c30a50632e7c"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff_rw_600.jpg?h=1eb1eb5adc5323cd730bd8dce4c4c752 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff_rw_1200.jpg?h=9ff9df828799ea867cdb1882dfedbc27 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff_rw_1920.jpg?h=834c0a425c7da961f6dfe556546e5602 1920w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/17a73ebebb10f59eac46baff_rw_3840.jpg?h=a416576ef1459c151392c30a50632e7c 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 51%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">PRODUCT BRIEFING</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Client commissioned me to research and design a digital product solution that they would pitch to some potential investors. They wanted to address a problem of the organisations involved in travel destination marketing (DMO) who were lacking appropriate digital tools for competing with tech savvy giants such as Booking.com. With their outdated, complex and costly e-commerce management softwares, based on expensive licensing models, DMOs were not able to manage their online e-commerce catalog and their relations with suppliers and customers in a fast paced fashion as dictated by the modern internet market.</span></div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Client’s initial solution idea was to modernise and implement current standards for this sector by creating a new better destination management and booking software (DMS):<br> - Complete booking solution for multiple accommodation providers<br> - Proprietary payment system<br> - Back-office area for multi-user availability management<br> - Subscription based SaaS multi tenant model<br> - Modern, responsive, fast, usable and customisable user interface</span></div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">I was asked  to deliver research documents and a graphic prototype to back the idea, to illustrate a potential solution and to highlight a business and innovation opportunities.</span></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8748a9ea40464e67b2f8dcaa.jpg?h=4e04b839395cbd33b9300081f9001452">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8748a9ea40464e67b2f8dcaa_rw_1920.jpg?h=4567ac8483405496f4eb17052d79ea42"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8748a9ea40464e67b2f8dcaa_rw_600.jpg?h=6f586b0e3de2916e6488b04b576f6159 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8748a9ea40464e67b2f8dcaa_rw_1200.jpg?h=09ff66ec7bc1872fd86cde8a1056e38d 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8748a9ea40464e67b2f8dcaa_rw_1920.jpg?h=4567ac8483405496f4eb17052d79ea42 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 72.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Research documentation: document containing insights from desktop research and user interviews</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div class="sub-title">Research</div><div class="main-text">I started with desktop research focusing on the current state of the online travel industry, followed with interviews with DMOs, testing of several pieces of software used by DMOs and destination operators, alongside workshops with hundreds of tourism service suppliers and benchmarking of hundreds of existing online booking solutions.</div><br><div class="sub-title">MY RESEARCH CONCLUSION</div><div><span style="font-family:ycvr;font-weight:500;">Initial idea to create a cutting edge software had many competitors, would be too costly and difficult to market and probably would be not addressing real problems and opportunities.</span></div><div><span style="font-family:ycvr;font-weight:500;">Feature opportunity - travellers were booking all type of tourism services online, thus there was room for testing a possible mashup of services, the so called dynamic package<br>Strong competition - building a better booking software for all type of tourism services could provide some advantage over competition in terms of features (most solutions are focused only on room bookings), but would end up being less affordable<br>High marketing and support costs - suppliers were not showing any willingness to invest their time in updating an additional inventory system<br>No market for a costly solution - the DMOs wanted to compete by focusing on their strengths - branding and destination promotion - and spend less on the online e-commerce</span></div><br><div class="sub-title">MY NEW SOLUTION SUGGESTION</div><span style="font-family:ycvr;font-weight:500;">My advice was to drop the idea of building just another online booking engine in favour of creating a meta-search engine - connecting the already existing booking systems (supplier’s website, online travel agencies, management software, channel managers).<br>This way, Tourists would still book through the DMO’s website, but directly to the service provider. They would be able to add a room, a tour and a museum ticket to a single shopping cart and pay only once. Meta-engine would take care of the split payment and booking to different providers. Suppliers, on the other hand, will not have to bother to update an additional inventory, they will connect and use their existing favorite system. By putting the traveller directly in relation with the supplier, DMOs would cut on costs of bookings management. This idea was following current trends, lacking competition and there was space for innovation.</span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/571511fd2e587f244857eab3.jpg?h=22ece4bc308623ef6c602c07f01339d5">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/571511fd2e587f244857eab3_rw_1920.jpg?h=d5ed847f7d507bfdf19f8a903601889f"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/571511fd2e587f244857eab3_rw_600.jpg?h=7040e3a4f39412e427c5201745d0d7ba 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/571511fd2e587f244857eab3_rw_1200.jpg?h=b7a2706555b299cdf7ab4c570d85fcbf 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/571511fd2e587f244857eab3_rw_1920.jpg?h=d5ed847f7d507bfdf19f8a903601889f 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 72.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">DESIGN CHALLENGES</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="main-text"><div><span style="font-family:ycvr;font-weight:500;">Business, marketing and branding challenges were on hold, the strategy was to get the Minimum Viable Product (MVP) out in the wild in order to test and track data from a real world users. Timeline was tight, the beginning of the tourism summer season was less than six months ahead. My responsibility was to design a prototype and make sure that the engineering team’s work and decisions were following the big picture.</span></div><div><span style="font-family:ycvr;font-weight:500;">The most challenging part for me was designing for several groups of end-users: Store owner (DMO), Supplier (Hotelier), Customer (Traveller). This is a typical online middleman e-commerce story. I had to design touch points for every user type while considering their crisscrossed experiences, risks and challenges. There was also technical providers user group: Data provider (Booking Engine), Payment systems (Online bank), Online store builders (Web design agency).</span></div><div><span style="font-family:ycvr;font-weight:500;">Before designing the user interface, we needed to connect existing booking systems APIs. Normalising data and the UI was an iterative process. Often I would get back to design when a new data set was connected. I was focused on creating an universal UI and API standard for each kind of tourism service, instead of adapting to each service provider.</span></div><div><span style="font-family:ycvr;font-weight:500;">Wireframes help fast iteration - simple black and white illustrations, created first on paper and then digital in Adobe Illustrator, were uploaded to InvisionApp in order to secure collaboration of everybody involved in the product definition.</span></div><div><span style="font-family:ycvr;font-weight:500;">Using iframe widgets to integrate the UI with any CMS was limiting. I worked closely with front-end developers to ensure that the best possible solutions are applied. Modal windows, payment security, deep linking and responsive frameworks were challenging with iframes.</span></div><div><span style="font-family:ycvr;font-weight:500;">There was need for flexible but stable visual and UI design as every widget would get custom CSS skinning in order to fit the hosting store’s website design. My concern was to standardise UI elements and make room for a right amount of customisation, but in the same time guarantee clarity, usability and conversion rates.</span></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054.jpg?h=765b001d4d3c1de312b4afc21f2dbeab">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054_rw_3840.jpg?h=d682111a68bbe7c5e23d603c60cfce0a"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054_rw_600.jpg?h=b1c6a9748ddb476a01e4c2aabea7d21e 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054_rw_1200.jpg?h=bcd1c3b8631f802f963e3a1b4956e4fc 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054_rw_1920.jpg?h=546779f9633fea87ac043f6da30209a0 1920w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c9f453d71fc541ba0a196054_rw_3840.jpg?h=d682111a68bbe7c5e23d603c60cfce0a 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 60.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Product design process: from sketches to an online collaborative wireframe to a final visual prototype.</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/fd43eb654789182545af88f0.png?h=35f0c7f9a9b2296644cfb5d9a263157c">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/fd43eb654789182545af88f0_rw_1920.png?h=3e929f6865a41a4956396ed29af61e57"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/fd43eb654789182545af88f0_rw_600.png?h=685a77160148824ed1c529aaeda603e4 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/fd43eb654789182545af88f0_rw_1200.png?h=996f66ea8da158dc5565e97add449984 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/fd43eb654789182545af88f0_rw_1920.png?h=3e929f6865a41a4956396ed29af61e57 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 70.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Sketching and visual design thinking is fundamental part of my designing process. Most decisions take place at this stage. Usually pen on paper, iPad in travel. </div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/1e1b8794ad8dcceab4562509.png?h=8e72fbaf25b85fa698f08f7f01e0c2d6">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/1e1b8794ad8dcceab4562509_rw_1920.png?h=80beed0759bf50b5fc0c23d9f430f19b"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/1e1b8794ad8dcceab4562509_rw_600.png?h=c4b1f0cd5e53907fdfb19781b1415076 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/1e1b8794ad8dcceab4562509_rw_1200.png?h=3abefb638382a87ab68cbb1da8e095b2 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/1e1b8794ad8dcceab4562509_rw_1920.png?h=80beed0759bf50b5fc0c23d9f430f19b 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 133.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8e60d41bb11b445f4b409de7.gif?h=23ab1c9231f27d9fd3dcd8329facc0e3">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8e60d41bb11b445f4b409de7_rw_1200.gif?h=385659522949b731c94d8a22a4f428b3"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8e60d41bb11b445f4b409de7_rw_600.gif?h=3c192eb350903d2f4f81cc0e86a53d8d 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/8e60d41bb11b445f4b409de7_rw_1200.gif?h=385659522949b731c94d8a22a4f428b3 1197w,"
+             data-sizes="(max-width: 1197px) 100vw, 1197px"
+             width="1197"
+             height="0"
+             style="padding-bottom: 49.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/82cc088288b318ae7164efa7.png?h=da25d19cf01b29d1dbf8f105349d898e">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/82cc088288b318ae7164efa7_rw_1920.png?h=224ed80f99ffd857dae662ecf7e356d0"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/82cc088288b318ae7164efa7_rw_600.png?h=87f5429fb357f532c5a6d363527ab39b 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/82cc088288b318ae7164efa7_rw_1200.png?h=ac0c7bad58d7bb7fd747eeaf046b1212 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/82cc088288b318ae7164efa7_rw_1920.png?h=224ed80f99ffd857dae662ecf7e356d0 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 109.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/179dccae770baeb345221427.png?h=fa7cdb1daeec3454e9eefee2067d39fe">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/179dccae770baeb345221427_rw_1920.png?h=5aa28ac4c6c343c3a337fd5b1894b365"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/179dccae770baeb345221427_rw_600.png?h=877e85179622a22b5f4add0fcb57baf8 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/179dccae770baeb345221427_rw_1200.png?h=d04c97d99df14cc3c968ea3ea95477e0 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/179dccae770baeb345221427_rw_1920.png?h=5aa28ac4c6c343c3a337fd5b1894b365 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 109.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/04a91424effe5e7d70bffc83.png?h=5490eff76ecf19e687e29277304dee8a">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/04a91424effe5e7d70bffc83_rw_1920.png?h=c5f19badc25967da719c8b29e6af5646"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/04a91424effe5e7d70bffc83_rw_600.png?h=2071f646529f580f7bb0e635b91af6c7 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/04a91424effe5e7d70bffc83_rw_1200.png?h=491e431d7f29aa5be63b5a6397bea075 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/04a91424effe5e7d70bffc83_rw_1920.png?h=c5f19badc25967da719c8b29e6af5646 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 100%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/46c99dd0530bdfbf71b2a726.png?h=83875ab38cb8b18804e7c1252af26cba">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/46c99dd0530bdfbf71b2a726_rw_1920.png?h=75ab67aecdf125446210d883a34f5de0"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/46c99dd0530bdfbf71b2a726_rw_600.png?h=946edd32fc83ecf2c29a4e2f92acb138 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/46c99dd0530bdfbf71b2a726_rw_1200.png?h=d76f459835271de67bcd53ab2acf311a 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/46c99dd0530bdfbf71b2a726_rw_1920.png?h=75ab67aecdf125446210d883a34f5de0 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 112.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/649eed37f86fcd5e2c6fae2a.png?h=c91469a2640fdc61ff3c3153264cc787">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/649eed37f86fcd5e2c6fae2a_rw_1920.png?h=d88963e41b7f546cf513e30b7ff19cdd"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/649eed37f86fcd5e2c6fae2a_rw_600.png?h=7d92df7f413b9c973939837bcbb0049d 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/649eed37f86fcd5e2c6fae2a_rw_1200.png?h=47be967e4413125063bde9f13f42285f 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/649eed37f86fcd5e2c6fae2a_rw_1920.png?h=d88963e41b7f546cf513e30b7ff19cdd 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 121%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f7deb3c61984d4142daf4ef1.png?h=48a125e75dcd9c818bda3c7105280d1c">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f7deb3c61984d4142daf4ef1_rw_1920.png?h=0c69b286dcebd12c556a6130db92aae4"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f7deb3c61984d4142daf4ef1_rw_600.png?h=b36671588548157308101af0f722d2ff 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f7deb3c61984d4142daf4ef1_rw_1200.png?h=ac92c04cf8d37d1fae8335e18241116d 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f7deb3c61984d4142daf4ef1_rw_1920.png?h=0c69b286dcebd12c556a6130db92aae4 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 84.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">DESIGN CHALLENGES AND PROCESS</div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Before designing the user interface, we needed to get in touch with the real data through a live booking system. Lodging booking engines were lacking standards, thus we had to first normalise the data. Fortunately, during my research I came across an international project working on open standards for the travel industry. We adopted and even contributed to the standards.</span></div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Designing a service booking interface was an iterative process. It was applied to the design of each type of tourism services. Often, I would get back to design when new data set was connected. In this way we were  able to focus on creating a universal UI and API standard for every kind of tourism service, instead of adapting to each service provider. There are services which are availability based (hotel rooms, tours), others, having an inventory, are more similar to physical products (tickets, rentals), while some do not have capacity logics (tourist cards, ski pass). <br>Using iframe widgets as the simplest UI integration method was limiting possibilities of the UI design. I worked closely with front-end developers to ensure that the best possible solutions are applied. </span></div><div class="main-text">There was no need for visual design as every widget would get CSS skinning to fit the hosting store’s design. Default visual design was based on Bootstrap framework’s elements. What I focused on was standardising UI elements that would get right amount of customisation in order to resemble any visual identity. <br>In the tourism industry one of the top priority features is multilingualism. My experience in designing multi-language products and my good knowledge of three languages helps me when designing and working with translators. As text is one of essential elements of UI, my concern is to understand, research and test translations.</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6ca34ee12adb339f6feb19e1.png?h=c79fe1348fafdf61a1b14c20f2aa33bc">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6ca34ee12adb339f6feb19e1_rw_1920.png?h=eb383443595b0ed44491647dd1c6deff"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6ca34ee12adb339f6feb19e1_rw_600.png?h=7c61e6952641c67729997966bdb92420 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6ca34ee12adb339f6feb19e1_rw_1200.png?h=0d30e6ae0686c8d8e913cd0d94925181 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/6ca34ee12adb339f6feb19e1_rw_1920.png?h=eb383443595b0ed44491647dd1c6deff 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 78%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Widget UI visual customization - SASS, Admin UI, Personalized front-end Booking widget<br>
+</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Live product</div><div>Since the launch in 2015, TravelMesh gathered clients ranging from big public funded websites, such as dedicated website for the Expo2015 in Milano (1000+ suppliers) to small local private associations, such as Andalo Vacanze with 40 hotels. Working closely in touch with clients and their customers secured an user centered approach in product's evolution.</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9fff8f4dc9233de97aac3fd2.png?h=f8bc6cb7a6ced935a357ca3af7e71f8f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9fff8f4dc9233de97aac3fd2_rw_1920.png?h=2760e8a80bf5e26cdcd8a8c678eb953f"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9fff8f4dc9233de97aac3fd2_rw_600.png?h=77939dc57751ba4560a77caa637c8403 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9fff8f4dc9233de97aac3fd2_rw_1200.png?h=06494b3a5b134018a0e1cd38109eab2f 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9fff8f4dc9233de97aac3fd2_rw_1920.png?h=2760e8a80bf5e26cdcd8a8c678eb953f 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Campiglio Dolomiti Official Madonna di Campiglio Ski Area tourism website TravelMesh widget</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/05be4ef37e0052b666d9fc3a.png?h=5cfc87a0681ecc951e9609b27ae0f603">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/05be4ef37e0052b666d9fc3a_rw_1920.png?h=0acf15e96550cc1a9401add057440c61"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/05be4ef37e0052b666d9fc3a_rw_600.png?h=c525ac9c7e606d98f60631c246e36a9c 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/05be4ef37e0052b666d9fc3a_rw_1200.png?h=3c8e2d7535caa3da6005d98838fb4c12 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/05be4ef37e0052b666d9fc3a_rw_1920.png?h=0acf15e96550cc1a9401add057440c61 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 86%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>EXPO 2015 Milano, Official Tourism Website - Checkout process</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c40f84c4275ef132f07e8a94.png?h=1150b178e9850a43a0904d0fb1ea846d">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c40f84c4275ef132f07e8a94_rw_1920.png?h=eb898db59b6c483f6e5409c4fe9dbd6e"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c40f84c4275ef132f07e8a94_rw_600.png?h=94bea674e119676e2aa8e7a91ef644cc 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c40f84c4275ef132f07e8a94_rw_1200.png?h=bf91b7f63e908ebea061c7b06ced3bd9 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/c40f84c4275ef132f07e8a94_rw_1920.png?h=eb898db59b6c483f6e5409c4fe9dbd6e 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 112.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Garda Lake Trentino, Official Tourism Website - Lodging Results Page</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/945693e40bcdf97a85efa8c0.png?h=6ba22ff4d9c219177ff7418c9e483b69">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/945693e40bcdf97a85efa8c0_rw_1920.png?h=d3abc41fa9b34085973ef26fde126a0a"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/945693e40bcdf97a85efa8c0_rw_600.png?h=64ed5634425d25b47cd6591b01f2c9b9 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/945693e40bcdf97a85efa8c0_rw_1200.png?h=ad9ca4305e020902f2104b3ab603e7a7 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/945693e40bcdf97a85efa8c0_rw_1920.png?h=d3abc41fa9b34085973ef26fde126a0a 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 86%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Garda Lake Trentino, Official Tourism Website - Product Results Page</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3d81684bac35741e143d4d7c.png?h=6c344801ac2b00d58b64281cdeeb1c3c">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3d81684bac35741e143d4d7c_rw_1920.png?h=86849b6b2e40e9e70934a532e17a4e69"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3d81684bac35741e143d4d7c_rw_600.png?h=e5823049ff07729cdf5505a582d1f1ef 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3d81684bac35741e143d4d7c_rw_1200.png?h=4be2e0df3d08efd36ac27a71e81da55d 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3d81684bac35741e143d4d7c_rw_1920.png?h=86849b6b2e40e9e70934a532e17a4e69 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 75.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>City of Parma, Official Tourism Website - Upselling modal screen</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">CONVERSION RATE IMPROVEMENT</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="main-text"><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Millions of tourists searched and booked through TravelMesh UI widgets and APIs. This was a great opportunity for data backed design decisions. We used different systems for data tracking and analysis (custom server data log for APIs, Google Analytics for visits and Heap Analytics for UI and user flow tracking). Data was analysed manually, hence we could work on improving the conversion rate. The average conversion rate <span class="texteditor-inline-color" style="color:#ffffff;">improved by 33%</span> in 6 months, thanks to constant analysis and UI improvements.</span></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ce5f2fd7a96429f06a104b14.png?h=dc41a55deb8cfb38fbd2a820ffcbeb3f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ce5f2fd7a96429f06a104b14_rw_1920.png?h=309cd427605b2828faa663a06fdb926c"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ce5f2fd7a96429f06a104b14_rw_600.png?h=8fff12dde8e9b1bbf9284fe06849efc5 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ce5f2fd7a96429f06a104b14_rw_1200.png?h=fe74410ade5ed16d4a41ebbeab9a9983 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ce5f2fd7a96429f06a104b14_rw_1920.png?h=309cd427605b2828faa663a06fdb926c 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 49.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>The average conversion rate from the product list to completed booking improved by 33% in 6 months, thanks to constant analysis and UI improvements.</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/96f5192a1138e9613d18ab99.png?h=b375195a16dd49281898d419641b0509">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/96f5192a1138e9613d18ab99_rw_1920.png?h=bcd7f1e26dee64407a9f4a1b3d1b4c17"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/96f5192a1138e9613d18ab99_rw_600.png?h=284da2f442fa532be00b3310cad77383 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/96f5192a1138e9613d18ab99_rw_1200.png?h=52935f9b6ace33c045bbc5e141db0f0c 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/96f5192a1138e9613d18ab99_rw_1920.png?h=bcd7f1e26dee64407a9f4a1b3d1b4c17 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 54.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">NEW FEATURE CASE</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div class="main-text"><span style="font-family:ycvr;font-weight:500;">Some features were developed upon explicit requests from store owners, from their suppliers or from usability tests. Others were improvements developed based on the results from data analysis. For example, while analysing a conversion funnel, I spotted that the hotel detail page had a high number of exits. Tourists would search for availability, identify a potentially interesting hotel and then open the detail page for additional information (photos, services, location). The next step would often result in an abandonment of the booking process. Assessment showed that not being able to proceed straight to the booking from the hotel detail page was a blocker. I designed and worked closely with developers to deliver rapidly the new feature: query and book an individual hotel directly from the detail page. It <span class="texteditor-inline-color" style="color:#eeeeee;">improved the conversion rate by 50%</span>.</span></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d22fbae86ac6012ee07fe9d9.png?h=cd95fb8a246b0a0e3d760f73d98cb669">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d22fbae86ac6012ee07fe9d9_rw_1920.png?h=ad177713724ef210a38a3a8d7f70d334"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d22fbae86ac6012ee07fe9d9_rw_600.png?h=242bd0ae329f97357eaf99457d83dad7 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d22fbae86ac6012ee07fe9d9_rw_1200.png?h=31a2b408d47ea7e1c2a49e0b36efbf5b 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d22fbae86ac6012ee07fe9d9_rw_1920.png?h=ad177713724ef210a38a3a8d7f70d334 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 71.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div><div>Enabling booking of an individual Hotel, without querying the entire inventory, required major changes in the API meta-search structure.</div></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">ADMIN AREA DESIGN</div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div>When you imagine a subscription based commercial digital product, you figure some sort of admin area that requires login and comes with all kinds of settings pages. This became my priority after the business plan and the working strategy was defined.</div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ad651e43986ccaa758646150.png?h=8775ad9e1366887fb75db6b8b9a79ec3">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ad651e43986ccaa758646150_rw_1920.png?h=8950aba08f7136c2f100acd18a49949d"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ad651e43986ccaa758646150_rw_600.png?h=d36ede3ec1031d1322dcb5e403c1fbc8 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ad651e43986ccaa758646150_rw_1200.png?h=fc85c33b7c2e484ab084e6b152d82940 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ad651e43986ccaa758646150_rw_1920.png?h=8950aba08f7136c2f100acd18a49949d 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 61%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Administration console for DMOs, the most valuable client group: reports, insights of the widget performance, booking details, lists of suppliers;<br>
+</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f99ef3c383cc370beef0a2d6.png?h=97966d99c763a7c943fb971f7b78eafd">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f99ef3c383cc370beef0a2d6_rw_1920.png?h=5ad60856855557e4cbd2e0aec952f1bd"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f99ef3c383cc370beef0a2d6_rw_600.png?h=81b1a14686663b11591605d40394c020 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f99ef3c383cc370beef0a2d6_rw_1200.png?h=ea2411ba2374db43cab0e9f46a56590c 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/f99ef3c383cc370beef0a2d6_rw_1920.png?h=5ad60856855557e4cbd2e0aec952f1bd 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 93.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/5d41173c5b1d0d38baf827cc.png?h=ffa9bba7ffbd7fc302f4cd0aeae26b4d">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/5d41173c5b1d0d38baf827cc_rw_1920.png?h=1e1b13fc35e3e769e8ba1b9eed369828"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/5d41173c5b1d0d38baf827cc_rw_600.png?h=a81fc2128be3ef0a34765265f9d58850 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/5d41173c5b1d0d38baf827cc_rw_1200.png?h=c2109cb192ca62cd12f0b029b742ca44 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/5d41173c5b1d0d38baf827cc_rw_1920.png?h=1e1b13fc35e3e769e8ba1b9eed369828 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 123.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Some of the major challenges was the multitude of user levels resulting in a cascade of dependent permission levels, which needed to be defined and controlled.</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/19776aa287467d1d32841f95.png?h=58d13483eba80d576dce1c84277be655">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/19776aa287467d1d32841f95_rw_1920.png?h=854e7620fce3f44381aa3489283ca135"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/19776aa287467d1d32841f95_rw_600.png?h=db09db8d2d6237eb6e2aaca24dc7d8e1 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/19776aa287467d1d32841f95_rw_1200.png?h=c32c93016468320b414ed134448f3ddc 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/19776aa287467d1d32841f95_rw_1920.png?h=854e7620fce3f44381aa3489283ca135 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 66.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>DMO Admin - Admin area login</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">Supplier onboarding<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div><div>Registration and terms acceptance by tourism service suppliers was strategical. As the average user resulted as “not much tech savvy”, we needed the simplest possible onboarding process.</div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9112d1d96f46418dd03ba235.jpg?h=ebccf6f40e71e228dab19ce0db08b2a1">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9112d1d96f46418dd03ba235_rw_1920.jpg?h=a89b083d4aeb6ed2737955e8d772a105"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9112d1d96f46418dd03ba235_rw_600.jpg?h=e92f7452ce24842446746ee76a7a0d91 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9112d1d96f46418dd03ba235_rw_1200.jpg?h=a29343da38817fbb8a53ba32dced3f40 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/9112d1d96f46418dd03ba235_rw_1920.jpg?h=a89b083d4aeb6ed2737955e8d772a105 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 81.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/096f2b4cd6d05c18aaaca036.jpg?h=616c1695511cbfabf9e3fb312254492c">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/096f2b4cd6d05c18aaaca036_rw_1920.jpg?h=84eb817920fdaf721da7367c3c720c64"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/096f2b4cd6d05c18aaaca036_rw_600.jpg?h=49b83a9350d989983905ac05b70b5adf 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/096f2b4cd6d05c18aaaca036_rw_1200.jpg?h=4df699cb5b571c0e60a0914f818b172e 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/096f2b4cd6d05c18aaaca036_rw_1920.jpg?h=84eb817920fdaf721da7367c3c720c64 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 81.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">BRANDING AND MARKETING<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="main-text"><div class="main-text">From the very start of this project; I was involved in the strategy meetings, marketing decisions and business planning. I have designed key elements of the product brand - the name and the visual identity. Brand is important part of the product, being usually at the very start point of the user’s product experience. <br>I have designed and produced all marketing material, from digital assets (website, blog, newsletter, email signature, presentations, templates) to physical (business card, brochures, banners).</div><div class="sub-title">CUSTOMER SUPPORT</div><div>As customer support is an important part of the product’s life and marketing, I have spent significant time replying to tickets and responding to telephone calls. It gave me the opportunity to develope and design material for a better customer service (guidelines, instruction brochures, technical documentation, newsletters).</div><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec.png?h=a45f18367cfa7420d07baa6bd4175909">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec_rw_3840.png?h=620f6ef0bd4d2b551d878374f4426619"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec_rw_600.png?h=499e4811b8600bbce167058290d2d349 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec_rw_1200.png?h=6285ddbfca5a75b8d75a4ec9a9bab25c 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec_rw_1920.png?h=59a916ba809b8af13bbfa330f264cd26 1920w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/69cfe03ea54f90ed9f2872ec_rw_3840.png?h=620f6ef0bd4d2b551d878374f4426619 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 58.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/074e0aede9473ca67a12718e.jpg?h=f03603380f378f23c77f5fef51eba0a1">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/074e0aede9473ca67a12718e_rw_1920.jpg?h=ff983a5218d2d977398719ca4fe9b657"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/074e0aede9473ca67a12718e_rw_600.jpg?h=50d2eda2869ce5958b2cf4ebcac510ba 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/074e0aede9473ca67a12718e_rw_1200.jpg?h=eb086072e359e9dc4b904a4f3344adf1 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/074e0aede9473ca67a12718e_rw_1920.jpg?h=ff983a5218d2d977398719ca4fe9b657 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 74.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Visual brand mood and assets - modern look for a tech startup</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ea272cd85098c0da08f380e7.jpg?h=d548f8a3ca7ffb514f306bef405bf8fa">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ea272cd85098c0da08f380e7_rw_1920.jpg?h=994c2c4f35c0cd078ec88731abff919f"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ea272cd85098c0da08f380e7_rw_600.jpg?h=767d72787020fb73fbd3093215119cdc 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ea272cd85098c0da08f380e7_rw_1200.jpg?h=1b2fd7de2c1b0c51296d5eaaa74f033c 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ea272cd85098c0da08f380e7_rw_1920.jpg?h=994c2c4f35c0cd078ec88731abff919f 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 71.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Designs for Newsletter, PDF brochure, Blog<br>
+</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module media_collection project-module-media_collection" data-id="m58dcb0acb5c7ff994405e446eee99bdd8eacecb27fbeeb1ea00d9"  style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="grid--main js-grid-main" data-grid-max-images="
+    ">
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="108.86203660253" style="width:108.86203660253px; flex-grow:108.86203660253;" data-width="1920" data-height="4585">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1920.png?h=37eefbcd6b388107124e8084583f1bce" srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_600.png?h=0c5bcc06a9c09c866a65568554013958 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1200.png?h=6515a68f302584e5b113d81f4ee9d5fb 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1920.png?h=37eefbcd6b388107124e8084583f1bce 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img
+        class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        
+        data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1920.png?h=37eefbcd6b388107124e8084583f1bce"
+        data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_600.png?h=0c5bcc06a9c09c866a65568554013958 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1200.png?h=6515a68f302584e5b113d81f4ee9d5fb 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/ffaf7403f6bc379b7aa3aed4_rw_1920.png?h=37eefbcd6b388107124e8084583f1bce 1920w,"
+      >
+      <span class="grid__item-filler" style="padding-bottom:238.83440739703%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="117.84861569723" style="width:117.84861569723px; flex-grow:117.84861569723;" data-width="1920" data-height="4235">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1920.png?h=d07af4bb7a9c91a0bece507524a555b0" srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_600.png?h=c4fdebb3a217f1e0a759e75af619b1b5 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1200.png?h=7bb8791b80d7beac8f4e28d26a43f6c1 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1920.png?h=d07af4bb7a9c91a0bece507524a555b0 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img
+        class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        
+        data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1920.png?h=d07af4bb7a9c91a0bece507524a555b0"
+        data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_600.png?h=c4fdebb3a217f1e0a759e75af619b1b5 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1200.png?h=7bb8791b80d7beac8f4e28d26a43f6c1 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3462e1d8f65fc837413521fa_rw_1920.png?h=d07af4bb7a9c91a0bece507524a555b0 1920w,"
+      >
+      <span class="grid__item-filler" style="padding-bottom:220.62202297562%;"></span>
+    </div>
+    <div class="grid__item-container js-grid-item-container" data-flex-grow="117.78877887789" style="width:117.78877887789px; flex-grow:117.78877887789;" data-width="1920" data-height="4238">
+      <script type="text/html" class="js-lightbox-slide-content">
+        <div class="grid__image-wrapper">
+          <img src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1920.png?h=6c8b8465068a43ec0a1e816bf36caf62" srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_600.png?h=627f13fe942008e4c577e82bcf067147 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1200.png?h=ec000300b6abdaecb82c9dbd010eeffd 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1920.png?h=6c8b8465068a43ec0a1e816bf36caf62 1920w,"  sizes="(max-width: 1920px) 100vw, 1920px">
+        <div>
+      </script>
+      <img
+        class="grid__item-image js-grid__item-image grid__item-image-lazy js-lazy"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        
+        data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1920.png?h=6c8b8465068a43ec0a1e816bf36caf62"
+        data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_600.png?h=627f13fe942008e4c577e82bcf067147 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1200.png?h=ec000300b6abdaecb82c9dbd010eeffd 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/3a408c5e11ef30c6baf3dd3c_rw_1920.png?h=6c8b8465068a43ec0a1e816bf36caf62 1920w,"
+      >
+      <span class="grid__item-filler" style="padding-bottom:220.73409918745%;"></span>
+    </div>
+    <div class="js-grid-spacer"></div>
+  </div>
+</div>
+
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2104edd30961f62cd69a3a2b.jpg?h=b572f97b920656fd74cba8f5813053da">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2104edd30961f62cd69a3a2b_rw_1920.jpg?h=e95684b82986487fd7325b785d80e47b"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2104edd30961f62cd69a3a2b_rw_600.jpg?h=10e802a838b09fb41db766b735669c4a 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2104edd30961f62cd69a3a2b_rw_1200.jpg?h=eecd412510e74543919ae1283c8d2cf0 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/2104edd30961f62cd69a3a2b_rw_1920.jpg?h=e95684b82986487fd7325b785d80e47b 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 223.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>TravelMesh website, Dynamic Packaging feature page (automatic translation).</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d6ff79b3f1427762e9793d6e.png?h=4c910215269b51a5916b024f09d80145">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d6ff79b3f1427762e9793d6e_rw_1920.png?h=05e88ddefc3a1b8fcbcd69a77ff53ff2"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d6ff79b3f1427762e9793d6e_rw_600.png?h=dea0a56fae1255be262577a72979fad0 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d6ff79b3f1427762e9793d6e_rw_1200.png?h=594bd213a191ac5775337e12638f1f7f 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/d6ff79b3f1427762e9793d6e_rw_1920.png?h=05e88ddefc3a1b8fcbcd69a77ff53ff2 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 52%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div>Design and copywriting for the technical documentation and installation guidelines.</div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="title">PRODUCT DESIGN CONCLUSION<br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div class="main-text"><div>The idea of solving the problem through a facilitator metasearch platform, which could connect to any kind of existing booking system, proved efficient. DMOs and Service Suppliers are enthusiastic with having this possibility, as no other platform at the moment offers such a service. It is a real opportunity to bring online all local services of a tourism destination, without the need for the suppliers to acquire or adopt any additional software.</div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align-center js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-style:italic;font-weight:300;">“With TravelMesh we got rid of management costs: we no longer need to update the availability of the services … we are free to focus our energies and our financial resources on marketing and online promotion.”</span></div><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-weight:500;">- Andalo Holidays</span></div><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-style:italic;font-weight:300;">“I'm really glad that EXPO 2015 contributes to the TravelMesh experiment which undoubtedly has great elements of originality and innovation.“</span></div><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-weight:500;">- EXPO Explora DMO</span></div><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-style:italic;font-weight:300;">“TravelMesh merged very well with the new design of our website. The previous system was outdated and too expensive to adapt.”</span></div><div style="text-align: right;" class="main-text"><span style="font-family:ycvr;font-weight:500;">- Campiglio Dolomiti</span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image js-js-project-module" >
+
+  
+
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/45dec8fffc64de3bc8d0d17a.jpg?h=057cf6277539398eecd16a0647e7e587">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/45dec8fffc64de3bc8d0d17a_rw_1920.jpg?h=4e8ef9e04f2ce552c8ff611c460ad163"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/45dec8fffc64de3bc8d0d17a_rw_600.jpg?h=0d54e3010ecaa68e8aa9d0afaf2a0b0e 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/45dec8fffc64de3bc8d0d17a_rw_1200.jpg?h=b246fcff8b0d7304f3fa6d977b9a10dc 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/14b16d1aa5df539cb0c942fda1e69fcf/45dec8fffc64de3bc8d0d17a_rw_1920.jpg?h=4e8ef9e04f2ce552c8ff611c460ad163 1600w,"
+             data-sizes="(max-width: 1600px) 100vw, 1600px"
+             width="1600"
+             height="0"
+             style="padding-bottom: 25%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="back-to-top" data-hover-hint="backToTop">
+          <a href="travelmesh.html#"><span class="arrow">&uarr;</span><span class="preserve-whitespace"></span></a>
+        </section>
+        <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="travelmesh.html#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+              <footer class="site-footer" data-hover-hint="footer">
+                <div class="footer-text">
+                  © 2020 Harun Alikadic
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":18,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5653d0e567a4c29193ead00f2420af8f778d8f0b2e0e04ad12e5e","theme":{"name":"basic"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#FFFFFF"}},"cookie_banner":{"enabled":false},"googleAnalytics":{"trackingCode":"UA-38906924-1","anonymization":false}};</script>
+  <script type="text/javascript" src="site/translations-cb="></script>
+  <script type="text/javascript" src="dist/js/main-cb=.js"></script>
+</html>
